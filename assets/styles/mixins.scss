@@ -1,0 +1,30 @@
+@mixin grid-items($gap-col, $gap-row, $column-size, $column-size-md, $column-size-sm: 1){
+  display: grid;
+  grid-template-columns: repeat($column-size, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: $gap-col;
+  grid-row-gap: $gap-row;
+
+  @media (max-width: 1440px) {
+    grid-template-columns: repeat($column-size-md, 1fr);
+  }
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat($column-size-md, 1fr);
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat($column-size-sm, 1fr);
+  }
+}
+
+
+@mixin default-spacing($top-bottom: 120px){
+
+  margin: $top-bottom 20%;
+
+  @media (max-width: 1024px) {
+    margin: $top-bottom 10%;
+  }
+  @media (max-width: 768px) {
+    margin: $top-bottom 5px;
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "melika",
+  "version": "1.0.0",
+  "description": "Melika photograpy page",
+  "author": "Vildan Tursic <vildantursic@hotmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/icon": "^2.1.0",
+    "@nuxtjs/manifest": "^2.1.0",
+    "@nuxtjs/pwa": "^2.0.8",
+    "@nuxtjs/sitemap": "^0.1.1",
+    "@nuxtjs/workbox": "^2.2.0",
+    "aos": "^2.3.3",
+    "axios": "^0.18.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "nuxt": "^1.0.0",
+    "vue-awesome-swiper": "^3.1.3",
+    "vue-image-lightbox": "^6.0.0",
+    "vue-lazyload": "^1.2.6",
+    "vue-touch": "^2.0.0-beta.4",
+    "vuex-persistedstate": "^2.5.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3"
+  }
+}

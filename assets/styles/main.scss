@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Parisienne|Playfair+Display');
+@import 'mixins';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+
+.logo {
+    font-family: 'Parisienne', cursive;
+}
+.space {
+    @include default-spacing();
+}
+.no-top {
+    margin-top: 0;
+    margin-bottom: 0; 
+}
