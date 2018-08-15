@@ -1,8 +1,8 @@
 <template>
   <div v-if="images" v-swiper:mySwiper="album ? swiperOptionAlbum : swiperOption" class="my-swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="(image, index) in images" :key="index">
-        <img :src="image" alt="">
+      <div class="swiper-slide" :style="{'height': album ? 'auto' : '100vh'}" v-for="(image, index) in images" :key="index">
+        <img :style="{'height': !album ? 'auto' : '100vh'}" :src="image" alt="">
         <div v-if="!album" class="cover"></div>
       </div>
     </div>
@@ -32,7 +32,6 @@
           // slidesPerView: 3,
           slidesPerView: 'auto',
           spaceBetween: 30,
-          mousewheel: true,
           loop: true,
           navigation: {
             nextEl: '.swiper-button-next',
@@ -66,7 +65,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
+          height: 100vh;
         @media (max-width: 768px) {
           height: 100vh;
         }

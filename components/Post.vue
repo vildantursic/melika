@@ -2,7 +2,7 @@
     <nuxt-link :to="`/blog/${item.id}`">
         <div class="blog" :style="{ 'background-image': `url(${item._embedded['wp:featuredmedia'] ?
                                     item._embedded['wp:featuredmedia'][0].media_details.sizes['full'].source_url :
-                                    'images/background.png'})` }">
+                                    '/images/background.png'})` }">
             <div class="pop-over">
                 <h1>{{item.title.rendered}}</h1>
                 <h5>{{date}}</h5>

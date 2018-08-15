@@ -4,24 +4,32 @@
             <div>Copyright &copy; 2018, Melika Tursic</div>
             <ul>
                 <li>
-                    <a target="_blank" href="https://www.facebook.com/melika.tursic?ref=br_rs">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+                    <nuxt-link to="https://www.facebook.com/melika.tursic?ref=br_rs">
+                        <i class="fab fa-facebook-f">
+                            <span class="link-desc">Facebook</span>
+                        </i>
+                    </nuxt-link>
                 </li>
                 <li>
-                    <a target="_blank" href="https://www.instagram.com/melikatursic/?hl=en">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <nuxt-link to="https://www.instagram.com/melikatursic/?hl=en">
+                        <i class="fab fa-instagram">
+                            <span class="link-desc">Instagram</span>
+                        </i>
+                    </nuxt-link>
                 </li>
                 <li>
-                    <a target="_blank" href="http://">
-                        <i class="fab fa-twitter"></i>
-                    </a>
+                    <nuxt-link to="https://twitter.com">
+                        <i class="fab fa-twitter">
+                            <span class="link-desc">Twitter</span>
+                        </i>
+                    </nuxt-link>
                 </li>
                 <li>
-                    <a target="_blank" href="http://">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <nuxt-link to="https://youtube.com">
+                        <i class="fab fa-youtube">
+                            <span class="link-desc">YouTube</span>
+                        </i>
+                    </nuxt-link>
                 </li>
             </ul>
         </section>
@@ -66,6 +74,7 @@
                     &:hover {
                         opacity: 1;
                     }
+
                 }
                 li:not(:last-child) {
                     margin-right: 40px;
@@ -74,6 +83,11 @@
 
             a {
                 color: unset;
+            }
+            .link-desc {
+                opacity: 0;
+                width: 0;
+                display: flex;
             }
         }
     }

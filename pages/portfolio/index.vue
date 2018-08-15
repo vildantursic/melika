@@ -25,12 +25,16 @@
         },
         data() {
             return {
-                loading: true,
-                albums: this.$store.state.albums
+                loading: true
             }
         },
         created() {
             this.getItems();
+        },
+        computed: {
+            albums() {
+                return this.$store.state.albums
+            }
         },
         methods: {
             getItems () {
@@ -38,8 +42,7 @@
                     this.loading = false;
         
                 axios.get('https://hotelsnjesko.ba/cms/wp-json/wp/v2/albums?_embed').then((response) => {
-                    this.albums = response.data;
-                    if (isEqual(this.albums, response.data)) {
+                    if (!isEqual(this.albums, response.data)) {
                         this.$store.commit('setAlbums', response.data);
                     }
                     this.loading = false;

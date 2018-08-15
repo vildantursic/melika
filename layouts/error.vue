@@ -19,7 +19,7 @@
 
 <style lang="scss" scoped>
 section {
-  height: 100vh;
+  min-height: 100vh;
   background: #8bcbc8;
   display: flex;
   align-items: center;

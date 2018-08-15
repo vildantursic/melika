@@ -9,25 +9,28 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Melika Tursic, photographer' },
       { name: 'keywords', content: 'Melika, Photography, Weddings, Photo, Portraits' },
-      { itemprop: 'name', content: 'Walter, Your strategic BIM partner' },
-      { itemprop: 'description', content: 'Your strategic BIM partner' },
-      { itemprop: 'image', content: '/walter.png' },
+      { itemprop: 'name', content: 'Melika Tursic, Photographer' },
+      { itemprop: 'description', content: 'Melika Tursic, Photographer' },
+      { itemprop: 'image', content: '/icon.png' },
 
-      { name: 'twitter:card', content: '/walter.png' },
-      { name: 'twitter:site', content: '@walter' },
-      { name: 'twitter:title', content: 'Walter, Your strategic BIM partner' },
-      { name: 'twitter:description', content: 'Your strategic BIM partner' },
-      { name: 'twitter:creator', content: '@walter' },
-      { name: 'twitter:image:src', content: '/walter.png' },
+      { name: 'twitter:card', content: '/icon.png' },
+      { name: 'twitter:site', content: '@melikatursic' },
+      { name: 'twitter:title', content: 'Melika Tursic, Photographer' },
+      { name: 'twitter:description', content: 'Melika Tursic, Photographer' },
+      { name: 'twitter:creator', content: '@melikatursic' },
+      { name: 'twitter:image:src', content: '/icon.png' },
 
-      { hid: 'og:title', property: 'og:title', content: 'Walter, Your strategic BIM partner' },
-      { hid: 'og:url', property: 'og:url', content: 'http://walter.ba/' },
-      { hid: 'og:image', property: 'og:image', content: 'http://walter.ba' },
-      { hid: 'og:description', property: 'og:description', content: 'Your strategic BIM partner' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Walter' }
+      { hid: 'og:title', property: 'og:title', content: 'Melika Tursic, Photographer' },
+      { hid: 'og:url', property: 'og:url', content: 'https://melika.surge.sh/' },
+      { hid: 'og:image', property: 'og:image', content: 'https://melika.surge.sh/' },
+      { hid: 'og:description', property: 'og:description', content: 'Melika Tursic, Photographer' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Melika' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.1.1/css/solid.css' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.1.1/css/brands.css' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.1.1/css/fontawesome.css' }
     ]
   },
   /*
@@ -111,7 +114,8 @@ module.exports = {
   ],
   plugins: [
     { src: '~/plugins/swiper.js', ssr: false },
-    { src: '~/plugins/localStorage.js', ssr: false }
+    { src: '~/plugins/localStorage.js', ssr: false },
+    { src: '~/plugins/lazyLoad.js', ssr: false }
   ]
 }
 

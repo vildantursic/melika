@@ -25,12 +25,16 @@
         },
         data() {
             return {
-                loading: true,
-                posts: this.$store.state.posts
+                loading: true
             }
         },
         created() {
             this.getItems();
+        },
+        computed: {
+            posts() {
+                return this.$store.state.posts
+            }
         },
         methods: {
             getItems () {
@@ -38,8 +42,7 @@
                     this.loading = false;
 
                 axios.get('https://hotelsnjesko.ba/cms/wp-json/wp/v2/posts?_embed').then((response) => {
-                    this.posts = response.data;
-                    if (isEqual(this.posts, response.data)) {
+                    if (!isEqual(this.posts, response.data)) {
                         this.$store.commit('setPosts', response.data);
                     }
                     this.loading = false;
