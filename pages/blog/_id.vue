@@ -88,7 +88,7 @@
                 return [posts, post]
             },
             getItems () {
-                axios.get(`https://hotelsnjesko.ba/cms/wp-json/wp/v2/posts/${this.$route.params.id}?_embed`).then((response) => {
+                axios.get(`https://cms.melikatursic.com/wp-json/wp/v2/posts/${this.$route.params.id}?_embed`).then((response) => {
                     this.post = response.data;
                     this.loading = false;
                 }).catch((err) => {
@@ -110,7 +110,6 @@
 
             .post {
                 position: relative;
-                height: 450px;
                 overflow: hidden;
                 display: flex;
                 align-items: center;
@@ -165,4 +164,23 @@
             }
         }
     }
+
+    .text {
+
+        * {
+            width: unset;
+            height: unset;
+        }
+
+        // img {
+        //     height: 100px !important;
+        //     min-height: 100px !important;
+        //     max-height: 100px !important;
+        //     width: 100px !important;
+        //     min-width: 100px !important;
+        //     max-width: 100px !important;
+        // }
+    }
+
+
 </style>

@@ -37,7 +37,7 @@ export default {
       if (this.images.length !== 0)
         this.loading = false;
 
-      axios.get('https://hotelsnjesko.ba/cms/wp-json/wp/v2/pages/38?_embed').then((response) => {
+      axios.get('https://cms.melikatursic.com/wp-json/wp/v2/pages/38?_embed').then((response) => {
         if (!isEqual(this.images, response.data.acf.gallery.split(','))) {
           this.$store.commit('setImages', response.data.acf.gallery.split(','));
         }

@@ -44,7 +44,7 @@
         },
         methods: {
             getPage () {
-                axios.get('https://hotelsnjesko.ba/cms/wp-json/wp/v2/pages/17?_embed').then((response) => {
+                axios.get('https://cms.melikatursic.com/wp-json/wp/v2/pages/17?_embed').then((response) => {
                     this.page = response.data;
                     this.loading = false;
                 }).catch((err) => {

@@ -38,15 +38,14 @@
         }
         .pop-over {
             position: absolute;
-            top: 0;
+            bottom: 0;
             z-index: 1;
             width: 100%;
-            height: 100%;
-            opacity: 0;
+            height: auto;
             background: rgba(255, 255, 255, 0.7);
             display: flex;
             align-items: flex-start;
-            justify-content: flex-end;
+            justify-content: flex-start;
             flex-direction: column;
             transition: ease-in-out .3s;
 
@@ -58,12 +57,6 @@
                 color: black;
                 opacity: 0.5;
                 padding: 0 25px;
-            }
-        }
-
-        &:hover {
-            .pop-over {
-                opacity: 1;
             }
         }
     }

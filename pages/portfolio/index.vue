@@ -41,7 +41,7 @@
                 if (this.albums.length !== 0)
                     this.loading = false;
         
-                axios.get('https://hotelsnjesko.ba/cms/wp-json/wp/v2/albums?_embed').then((response) => {
+                axios.get('https://cms.melikatursic.com/wp-json/wp/v2/albums?_embed').then((response) => {
                     if (!isEqual(this.albums, response.data)) {
                         this.$store.commit('setAlbums', response.data);
                     }

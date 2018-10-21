@@ -4,7 +4,7 @@
         <section v-if="!loading">
             <div class="content space">
                 <div class="contact">
-                    <form method="GET" action="https://hotelsnjesko.ba/cms/wp-json/contact-form-7/v1/contact-forms/115/feedback">
+                    <form method="GET" action="https://cms.melikatursic.com/wp-json/contact-form-7/v1/contact-forms/115/feedback">
                         <input placeholder="Name" type="text" name="name">
                         <input placeholder="Email" type="email" name="email">
                         <input placeholder="Subject" type="text" name="subject">
@@ -44,7 +44,7 @@
         },
         methods: {
             getPage () {
-                axios.get('https://hotelsnjesko.ba/cms/wp-json/wp/v2/pages/19?_embed').then((response) => {
+                axios.get('https://cms.melikatursic.com/wp-json/wp/v2/pages/19?_embed').then((response) => {
                     this.page = response.data;
                     this.loading = false;
                 }).catch((err) => {

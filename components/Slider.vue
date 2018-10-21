@@ -1,5 +1,9 @@
 <template>
   <div v-if="images" v-swiper:mySwiper="album ? swiperOptionAlbum : swiperOption" class="my-swiper">
+    <div class="actions" v-if="album">
+      <Social></Social>
+      <i class="fas fa-times close" @click="$emit('onClose')"></i>
+    </div>
     <div class="swiper-wrapper">
       <div class="swiper-slide" :style="{'height': album ? 'auto' : '100vh'}" v-for="(image, index) in images" :key="index">
         <img :style="{'height': !album ? 'auto' : '100vh'}" :src="image" alt="">
@@ -12,7 +16,12 @@
 </template>
 
 <script>
+  import Social from './Social'
+
   export default {
+    components: {
+      Social
+    },
     props: ['images', 'album'],
     data() {
       return {
@@ -29,9 +38,9 @@
           }
         },
         swiperOptionAlbum: {
-          // slidesPerView: 3,
-          slidesPerView: 'auto',
-          spaceBetween: 30,
+          slidesPerView: 1,
+          spaceBetween: 0,
+          effect: 'fade',
           loop: true,
           navigation: {
             nextEl: '.swiper-button-next',
@@ -52,12 +61,23 @@
     width: 100%;
     height: 100%;
 
+    .actions {
+      background-color: $main-color;
+      padding: 10px 15%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .close {
+        cursor: pointer;
+      }
+    }
+
     .swiper-wrapper {
       width: 100%;
 
       .swiper-slide {
         width: auto;
-        text-align: center;
         font-size: 38px;
         font-weight: 700;
         background-color: $main-color;
@@ -65,14 +85,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-          height: 100vh;
-        @media (max-width: 768px) {
-          height: 100vh;
-        }
+        height: 100vh;
 
         img {
-          height: 100%;
-          cursor: pointer;
+         
+          @media screen and (max-width: 400px) {
+            height: 100vh !important;
+          }
         }
       }
     }

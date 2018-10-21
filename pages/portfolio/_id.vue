@@ -6,8 +6,13 @@
                 <h1>{{album.title.rendered}}</h1>
                 <h4>{{date}}</h4>
             </div>
-            <div class="album">
-                <Slider :images="album.acf.gallery.split(',')" :album="true"></Slider>
+            <div class="album-list space">
+                <div class="image" v-for="(image, i) in album.acf.gallery.split(',')" :key="i">
+                    <img :src="image" alt="" @click="showFullScreen = !showFullScreen">
+                </div>
+            </div>
+            <div class="album" v-if="showFullScreen">
+                <Slider :images="album.acf.gallery.split(',')" :album="true" @onClose="showFullScreen = false"></Slider>
             </div>
             <div class="content space">
                 <div class="text" v-html="album.content.rendered"></div>
@@ -42,6 +47,7 @@
         data() {
             return {
                 loading: true,
+                showFullScreen: false,
                 album: {
                     title: {
                         rendered: ''
@@ -78,7 +84,7 @@
                 return [albums, album]
             },
             getItems () {
-                axios.get(`https://hotelsnjesko.ba/cms/wp-json/wp/v2/albums/${this.$route.params.id}?_embed`).then((response) => {
+                axios.get(`https://cms.melikatursic.com/wp-json/wp/v2/albums/${this.$route.params.id}?_embed`).then((response) => {
                     this.album = response.data;
                     this.loading = false;
                 }).catch((err) => {
@@ -105,13 +111,48 @@
             margin-bottom: 40px;
         }
 
-        .album {
-            height: 600px;
+        .album-list { 
+            padding: .5vw;
+            font-size: 0;
+            display: -ms-flexbox;
+            -ms-flex-wrap: wrap;
+            -ms-flex-direction: column;
+            -webkit-flex-flow: row wrap; 
+            flex-flow: row wrap; 
+            display: -webkit-box;
+            display: flex;
 
-            @media (max-width: 768px) {
-                height: auto;
+            @media screen and (max-width: 400px) {
+                padding: 0;
+            }
+
+            .image { 
+                -webkit-box-flex: auto;
+                -ms-flex: auto;
+                flex: auto; 
+                width: 400px; 
+                margin: .5vw; 
+
+                @media screen and (max-width: 400px) {
+                    margin: 0;
+                }
+
+                img {
+                    cursor: pointer;
+                    width: 100%; 
+                    height: auto; 
+                }
             }
         }
+        .album {
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
         .navigation {
             display: flex;
             align-items: center;
